@@ -7,6 +7,7 @@ using ProjectManagementBK.Controllers;
 using System.Net.Http;
 using System.Web.Http;
 using ProjectManagement.Entities;
+using ProjectManagement.BusinessLayer;
 
 namespace ProjectManagement.Test
 {
@@ -40,7 +41,7 @@ namespace ProjectManagement.Test
             var response = controller.Get(1);
 
             Assert.AreEqual(response.TaskID, 1);
-            Assert.AreEqual("Sample Task Parent 1", response.TaskDesc);
+            Assert.AreEqual("Sample Task Parent 1 Test", response.TaskDesc);
         }
         [TestCase]
         public void AddTaskTest()
@@ -68,7 +69,7 @@ namespace ProjectManagement.Test
             controller.Configuration = new HttpConfiguration();
 
             var task = controller.Get(1);
-            task.Priority = 15;
+            task.Priority = 10;
 
             string result = controller.EditTask(task);
             Assert.AreEqual("Record updated Successfully", result);
@@ -81,7 +82,7 @@ namespace ProjectManagement.Test
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();           
 
-            string result = controller.DeleteTask(9);
+            string result = controller.DeleteTask(1012);
             Assert.AreEqual("Record deleted Successfully", result);
         }
 
@@ -99,6 +100,18 @@ namespace ProjectManagement.Test
 
             Assert.IsNotEmpty(response);
 
+        }
+
+        [Test]
+        public void AddParentTaskTest()
+        {
+            ParentTask task = new ParentTask();
+            task.ParentTaskDesc = "Parent 6 Nunit";
+
+            TaskManagementBusinessLayer taskBL = new TaskManagementBusinessLayer();
+            string result = taskBL.AddParentTask(task);
+
+            Assert.AreEqual("Record added Successfully", result);
         }
 
         

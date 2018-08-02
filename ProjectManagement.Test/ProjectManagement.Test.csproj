@@ -93,6 +93,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjectManagement.BusinessLayer\ProjectManagement.BusinessLayer.csproj">
+      <Project>{3ed6f18a-1329-43a6-9931-64cb0c1462c6}</Project>
+      <Name>ProjectManagement.BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectManagement.Entities\ProjectManagement.Entities.csproj">
       <Project>{02ca8f4a-7868-4f7c-b663-6ba1d3b2257f}</Project>
       <Name>ProjectManagement.Entities</Name>

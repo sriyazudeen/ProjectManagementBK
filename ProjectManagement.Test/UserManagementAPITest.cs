@@ -64,7 +64,7 @@ namespace ProjectManagement.Test
             controller.Configuration = new HttpConfiguration();
 
             var user = controller.Get(1);
-            user.EmployeeID = 456789;
+            user.EmployeeID = 432423;
 
             string result = controller.Put(user);
             Assert.AreEqual("Record updated Successfully", result);
@@ -77,7 +77,7 @@ namespace ProjectManagement.Test
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            string result = controller.Delete(3);
+            string result = controller.Delete(1005);
             Assert.AreEqual("Record deleted Successfully", result);
         }
     }

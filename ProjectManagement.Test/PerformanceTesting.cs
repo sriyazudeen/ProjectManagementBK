@@ -9,7 +9,7 @@ using System.Net.Http;
 using ProjectManagementBK.Controllers;
 using ProjectManagement.Entities;
 
-namespace ProjectManagement.Test
+namespace TaskManager.Test
 {
     public class PerformanceTesting
     {

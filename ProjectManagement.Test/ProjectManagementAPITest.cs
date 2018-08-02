@@ -66,7 +66,7 @@ namespace ProjectManagement.Test
             controller.Configuration = new HttpConfiguration();
 
             var project = controller.Get(1);
-            project.Priority = 15;
+            project.Priority = 10;
 
             string result = controller.Put(project);
             Assert.AreEqual("Record updated Successfully", result);
@@ -79,7 +79,7 @@ namespace ProjectManagement.Test
             controller.Request = new HttpRequestMessage();
             controller.Configuration = new HttpConfiguration();
 
-            string result = controller.Delete(7);
+            string result = controller.Delete(2007);
             Assert.AreEqual("Record deleted Successfully", result);
         }        
     }
